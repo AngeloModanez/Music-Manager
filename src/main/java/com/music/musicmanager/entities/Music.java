@@ -18,7 +18,7 @@ public class Music {
     private Date date;
     private String album;
     private String band;
-    private String author;
+    private String genre;
 
     public int getId() {
         return id;
@@ -60,12 +60,12 @@ public class Music {
         this.band = band;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
 }
