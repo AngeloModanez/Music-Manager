@@ -1,7 +1,5 @@
 package com.music.musicmanager.entities;
 
-import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -15,16 +13,16 @@ public class Music {
     private Integer id;
 
     private String title;
-    private Date date;
+    private Integer date;
     private String album;
     private String band;
     private String genre;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -36,11 +34,11 @@ public class Music {
         this.title = title;
     }
 
-    public Date getDate() {
+    public Integer  getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Integer date) {
         this.date = date;
     }
 
