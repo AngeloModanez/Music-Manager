@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -31,5 +32,10 @@ public class MusicController {
     @PostMapping("musics")
     public Music postMusic(@RequestBody Music music) {
         return service.postMusics(music);
+    }
+
+    @DeleteMapping("musics/{id}")
+    public void deleteMusicById(@PathVariable int id) {
+        service.deleteMusicById(id);
     }
 }

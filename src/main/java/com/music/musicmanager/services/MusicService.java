@@ -22,10 +22,18 @@ public class MusicService {
 
     public Music getMusicById(int id) {
         return repository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException("Música não cadastrada!"));
+                () -> new EntityNotFoundException("Música não cadastrada!!"));
     }
 
     public Music postMusics(Music music) {
         return repository.save(music);
+    }
+
+    public void deleteMusicById(int id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("Música não cadastrada!!");
+        }
     }
 }
