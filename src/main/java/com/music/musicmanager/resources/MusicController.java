@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.music.musicmanager.entities.Music;
 import com.music.musicmanager.services.MusicService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class MusicController {
@@ -37,5 +38,10 @@ public class MusicController {
     @DeleteMapping("musics/{id}")
     public void deleteMusicById(@PathVariable int id) {
         service.deleteMusicById(id);
+    }
+
+    @PutMapping("musics/{id}")
+    public void updateMusic(@PathVariable int id, @RequestBody Music music) {
+        service.updateMusic(id, music);
     }
 }

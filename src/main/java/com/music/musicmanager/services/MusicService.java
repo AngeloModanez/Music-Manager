@@ -36,4 +36,14 @@ public class MusicService {
             throw new EntityNotFoundException("Música não cadastrada!!");
         }
     }
+
+    public void updateMusic(int id, Music music) {
+        Music temp = repository.getReferenceById(id);
+        temp.setTitle(music.getTitle());
+        temp.setDate(music.getDate());
+        temp.setAlbum(music.getAlbum());
+        temp.setBand(music.getBand());
+        temp.setGenre(music.getGenre());
+        repository.save(temp);
+    }
 }
