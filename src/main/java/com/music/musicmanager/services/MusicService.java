@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.music.musicmanager.entities.Music;
 import com.music.musicmanager.repositories.MusicRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class MusicService {
 
@@ -16,5 +18,10 @@ public class MusicService {
 
     public List<Music> getMusics() {
         return repository.findAll();
+    }
+
+    public Music getMusicById(int id) {
+        return repository.findById(id).orElseThrow(
+                () -> new EntityNotFoundException("Música não cadastrada!"));
     }
 }
