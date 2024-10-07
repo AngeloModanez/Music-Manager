@@ -24,4 +24,8 @@ public class MusicService {
         return repository.findById(id).orElseThrow(
                 () -> new EntityNotFoundException("Música não cadastrada!"));
     }
+
+    public Music postMusics(Music music) {
+        return repository.save(music);
+    }
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.music.musicmanager.entities.Music;
 import com.music.musicmanager.services.MusicService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class MusicController {
@@ -24,5 +26,10 @@ public class MusicController {
     @GetMapping("musics/{id}")
     public Music getMusicById(@PathVariable int id) {
         return service.getMusicById(id);
+    }
+
+    @PostMapping("musics")
+    public Music postMusic(@RequestBody Music music) {
+        return service.postMusics(music);
     }
 }
